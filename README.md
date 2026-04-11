@@ -67,12 +67,24 @@ All retrieval servers share the same interface:
 
 ---
 
-### BM25+Reranker Pipeline (when available)
+### BM25+Reranker Pipeline
 
-Same `POST /retrieve` interface. Internally it:
-1. Retrieves top-50 candidates with BM25
-2. Reranks with `Qwen/Qwen3-Reranker-0.6B`
-3. Returns top-k (default 5)
+Same `POST /retrieve` interface, with two additional optional parameters:
+
+```json
+{
+  "queries": ["your search query here"],
+  "topk": 5,
+  "bm25_topk": 50
+}
+```
+
+| Field | Type | Default | Description |
+|-------|------|---------|-------------|
+| `topk` | `int` | `5` | Number of documents to return after reranking |
+| `bm25_topk` | `int` | `50` | How many BM25 candidates to retrieve before reranking. Max: **100** |
+
+Internally: BM25 retrieves `bm25_topk` candidates → Qwen3-Reranker-0.6B scores all of them → returns top `topk`.
 
 The response includes an extra `reranker_score` field on each document.
 
@@ -94,28 +106,6 @@ for doc in docs:
     print(doc["text"][:200])
     print()
 ```
-
----
-
-## Choosing a Retriever
-
-| Retriever | Speed | Quality | Best for |
-|-----------|-------|---------|----------|
-| **BM25** | Fast (100–200 req/s) | Good for keyword queries | Baseline, high-throughput pipelines |
-| **E5 (dense)** | Moderate (~20–35 req/s) | Better semantic matching | Paraphrase / conceptual queries |
-| **BM25+Reranker** | Slower (~3–5 req/s) | Highest quality | Final retrieval stage, quality-first |
-
-For experiments comparing retrievers, use **the same corpus** across all three types.
-
----
-
-## Parameters to Tune in Your Experiments
-
-| Parameter | Where to set | Recommended range | Notes |
-|-----------|-------------|-------------------|-------|
-| `topk` | Request body | 5–20 for RAG; up to 100 | Higher topk = more context, slower LLM |
-| Retriever type | Server URL | BM25 / E5 / BM25+Reranker | Trade-off speed vs. quality |
-| Corpus | Server URL | trqa-wiki, wiki-18, trec-rag, … | Match corpus to your task domain |
 
 ---
 
