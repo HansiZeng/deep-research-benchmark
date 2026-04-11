@@ -27,8 +27,12 @@ SERVERS = {
     "bm25_wiki18":         "http://cpu068:8032/retrieve",
     "bm25_trec_rag":       "http://gypsum-gpu144:8042/retrieve",
 
-    # BM25 + Reranker (coming soon — replace ??? with actual host once live)
-    # "reranker_trqa_wiki":  "http://???:8003/retrieve",
+    # BM25 + Reranker
+    "reranker_trqa_wiki":      "http://gypsum-gpu153:8003/retrieve",
+    "reranker_trqa_ecommerce": "http://gypsum-gpu146:8013/retrieve",
+    "reranker_browsecomp":     "http://gypsum-gpu116:8023/retrieve",
+    "reranker_wiki18":         "http://gypsum-gpu127:8033/retrieve",
+    "reranker_trec_rag":       "http://gypsum-gpu131:8043/retrieve",
 }
 
 
