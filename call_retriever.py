@@ -98,6 +98,7 @@ def example_batch_queries():
         print(f"Q: {q!r}")
         for doc in docs:
             print(f"  - [{doc['id']}] {doc['title']}")
+            print(f"    {doc['text'][:50]}...")
         print()
 
 
@@ -135,7 +136,7 @@ if __name__ == "__main__":
     print("=" * 60)
     example_batch_queries()
 
-    print("=" * 60)
-    print("Example 3: BM25 vs E5 comparison (wiki-18)")
-    print("=" * 60)
-    example_compare_retrievers()
+    # print("=" * 60)
+    # print("Example 3: BM25 vs E5 comparison (wiki-18)")
+    # print("=" * 60)
+    # example_compare_retrievers()
