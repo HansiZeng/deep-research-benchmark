@@ -8,21 +8,21 @@ Retrieval servers for the deep research course project. For each corpus we host 
 
 | Type | Corpus | Dataset | Server URL | Status |
 |------|--------|---------|------------|--------|
-| E5 (dense) | trqa-wiki | [Total Recall QA](https://arxiv.org/pdf/2603.18516) — wiki | `http://gypsum-gpu117:8001/retrieve` | ⚠️ Rebuilding (temporarily offline) |
-| E5 (dense) | trqa-ecommerce | [Total Recall QA](https://arxiv.org/pdf/2603.18516) — ecommerce | `http://gpu016:8011/retrieve` | ✅ Ready |
-| E5 (dense) | browsecomp-plus | [BrowseComp-Plus](https://arxiv.org/pdf/2508.06600) | `http://gpu021:8021/retrieve` | ✅ Ready |
-| E5 (dense) | wiki-18 | Wikipedia 2018 | `http://gypsum-gpu176:8031/retrieve` | ✅ Ready |
-| E5 (dense) | trec-rag | [TREC RAG 2024](https://trec-rag.github.io/) | — | ⏳ Index building |
+| E5 (dense) | trqa-wiki | Total Recall QA — wiki | — | ⏳ Pending |
+| E5 (dense) | trqa-ecommerce | Total Recall QA — ecommerce | `http://gpu016:8011/retrieve` | ✅ Ready |
+| E5 (dense) | browsecomp-plus | BrowseComp-Plus | `http://gpu021:8021/retrieve` | ✅ Ready |
+| E5 (dense) | wiki-18 | MultiHop QA | `http://gypsum-gpu176:8031/retrieve` | ✅ Ready |
+| E5 (dense) | trec-rag | TREC RAG 2024 | — | ⏳ Pending |
 | BM25 | trqa-wiki | Total Recall QA — wiki | `http://gypsum-gpu126:8002/retrieve` | ✅ Ready |
 | BM25 | trqa-ecommerce | Total Recall QA — ecommerce | `http://gypsum-gpu126:8012/retrieve` | ✅ Ready |
 | BM25 | browsecomp-plus | BrowseComp-Plus | `http://gypsum-gpu127:8022/retrieve` | ✅ Ready |
-| BM25 | wiki-18 | Wikipedia 2018 | `http://cpu068:8032/retrieve` | ✅ Ready |
+| BM25 | wiki-18 | MultiHop QA | `http://cpu068:8032/retrieve` | ✅ Ready |
 | BM25 | trec-rag | TREC RAG 2024 | `http://gypsum-gpu144:8042/retrieve` | ✅ Ready |
-| BM25+Reranker | trqa-wiki | Total Recall QA — wiki | — | ⏳ Coming soon |
-| BM25+Reranker | trqa-ecommerce | Total Recall QA — ecommerce | — | ⏳ Coming soon |
-| BM25+Reranker | browsecomp-plus | BrowseComp-Plus | — | ⏳ Coming soon |
-| BM25+Reranker | wiki-18 | Wikipedia 2018 | — | ⏳ Coming soon |
-| BM25+Reranker | trec-rag | TREC RAG 2024 | — | ⏳ Coming soon |
+| BM25+Reranker | trqa-wiki | Total Recall QA — wiki | `http://gypsum-gpu153:8003/retrieve` | ✅ Ready |
+| BM25+Reranker | trqa-ecommerce | Total Recall QA — ecommerce | `http://gypsum-gpu146:8013/retrieve` | ✅ Ready |
+| BM25+Reranker | browsecomp-plus | BrowseComp-Plus | `http://gypsum-gpu116:8023/retrieve` | ✅ Ready |
+| BM25+Reranker | wiki-18 | MultiHop QA | `http://gypsum-gpu127:8033/retrieve` | ✅ Ready |
+| BM25+Reranker | trec-rag | TREC RAG 2024 | `http://gypsum-gpu131:8043/retrieve` | ✅ Ready |
 
 > **Note:** All servers are on the cluster internal network. You must run your code from a cluster node (login node or compute job) — these URLs are not accessible from your laptop.
 

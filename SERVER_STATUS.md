@@ -18,11 +18,11 @@ Last updated: 2026-04-11
 | BM25 | browsecomp-plus | gypsum-gpu127 | 8022 | ✅ Running |
 | BM25 | trec-rag | gypsum-gpu144 | 8042 | ✅ Running |
 | BM25 | wiki-18 | cpu068 | 8032 | ✅ Running |
-| BM25+Reranker | trqa-wiki | (pending proxy restart) | 8003 | ⏳ Resubmit needed |
-| BM25+Reranker | trqa-ecommerce | (pending proxy restart) | 8013 | ⏳ Resubmit needed |
-| BM25+Reranker | browsecomp-plus | (pending proxy restart) | 8023 | ⏳ Resubmit needed |
-| BM25+Reranker | wiki-18 | (pending proxy restart) | 8033 | ⏳ Resubmit needed |
-| BM25+Reranker | trec-rag | (pending proxy restart) | 8043 | ⏳ Resubmit needed |
+| BM25+Reranker | trqa-wiki | gypsum-gpu153 | 8003 | ✅ Running |
+| BM25+Reranker | trqa-ecommerce | gypsum-gpu146 | 8013 | ✅ Running |
+| BM25+Reranker | browsecomp-plus | gypsum-gpu116 | 8023 | ✅ Running |
+| BM25+Reranker | wiki-18 | gypsum-gpu127 | 8033 | ✅ Running |
+| BM25+Reranker | trec-rag | gypsum-gpu131 | 8043 | ✅ Running |
 | Reranker | (corpus-agnostic) | gypsum-gpu177 | 9001 | ✅ Running (6× 2080ti, DataParallel) |
 | Reranker | (corpus-agnostic) | gypsum-gpu171 | 9002 | ✅ Running (6× 2080ti, DataParallel) |
 

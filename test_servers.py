@@ -32,13 +32,12 @@ PENDING_SERVERS = {
 }
 
 # BM25+Reranker proxy servers (POST /retrieve, same interface)
-# All pending resubmission — update hosts once jobs are running
 PROXY_SERVERS = {
-    "Proxy trqa-wiki":      ("???",            8003),
-    "Proxy trqa-ecommerce": ("???",            8013),
-    "Proxy browsecomp":     ("???",            8023),
-    "Proxy wiki-18":        ("???",            8033),
-    "Proxy trec-rag":       ("???",            8043),
+    "Proxy trqa-wiki":      ("gypsum-gpu153",  8003),
+    "Proxy trqa-ecommerce": ("gypsum-gpu146",  8013),
+    "Proxy browsecomp":     ("gypsum-gpu116",  8023),
+    "Proxy wiki-18":        ("gypsum-gpu127",  8033),
+    "Proxy trec-rag":       ("gypsum-gpu131",  8043),
 }
 
 # Reranker servers (POST /rerank, different interface)
