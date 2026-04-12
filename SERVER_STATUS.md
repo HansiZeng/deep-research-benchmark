@@ -11,7 +11,7 @@ Last updated: 2026-04-11
 | E5 | trqa-ecommerce | gpu016 | 8011 | ✅ Running |
 | E5 | browsecomp-plus | gpu021 | 8021 | ✅ Running |
 | E5 | wiki-18 | gypsum-gpu176 | 8031 | ✅ Running |
-| E5 | trqa-wiki | gypsum-gpu117 | 8001 | ⚠️ Running (SQ8/CPU, slow under high concurrency) |
+| E5 | trqa-wiki | gpu018 | 8001 | ✅ Running (IVF65536_HNSW32,PQ96, GPU) |
 | E5 | trec-rag | ??? | 8041 | ⏳ Pending (rebuilding index: IVF65536_HNSW32,PQ128) |
 | BM25 | trqa-wiki | gypsum-gpu126 | 8002 | ✅ Running |
 | BM25 | trqa-ecommerce | gypsum-gpu126 | 8012 | ✅ Running |

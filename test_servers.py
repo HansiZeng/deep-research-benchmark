@@ -7,7 +7,6 @@ Update SERVERS / PENDING_SERVERS as jobs start:
 """
 
 import time
-import json
 import concurrent.futures
 import requests
 
@@ -18,7 +17,7 @@ import requests
 SERVERS = {
     "E5 trqa-ecommerce":   ("gpu016",          8011),
     "E5 browsecomp-plus":  ("gpu021",          8021),
-    # "E5 trqa-wiki":        ("gypsum-gpu117",   8001),  # SQ8/CPU, slow under high concurrency
+    "E5 trqa-wiki":        ("gpu018",          8001),
     "E5 wiki-18":          ("gypsum-gpu176",   8031),
     "BM25 trqa-wiki":      ("gypsum-gpu126",   8002),
     "BM25 trqa-ecommerce": ("gypsum-gpu126",   8012),
