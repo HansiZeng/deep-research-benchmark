@@ -39,12 +39,6 @@ PROXY_SERVERS = {
     "Proxy trec-rag":       ("gypsum-gpu145",  8043),
 }
 
-# Reranker servers (POST /rerank, different interface)
-RERANKER_SERVERS = {
-    "Reranker-1": ("gypsum-gpu177", 9001),
-    "Reranker-2": ("gypsum-gpu171", 9002),
-}
-
 # ── Config ───────────────────────────────────────────────────────────────────
 TOPK = 5
 TIMEOUT = 120
@@ -69,12 +63,6 @@ def retrieve(host: str, port: int, query: str, topk: int = TOPK) -> dict:
     resp.raise_for_status()
     return resp.json()
 
-
-def rerank(host: str, port: int, query: str, documents: list, topk: int = TOPK) -> dict:
-    url = f"http://{host}:{port}/rerank"
-    resp = requests.post(url, json={"query": query, "documents": documents, "topk": topk}, timeout=TIMEOUT)
-    resp.raise_for_status()
-    return resp.json()
 
 
 def print_docs(docs: list[dict], max_text: int = 200):
@@ -109,26 +97,6 @@ def test_smoke():
 
     if PENDING_SERVERS:
         print(f"\n  (skipping {len(PENDING_SERVERS)} pending retrieval servers)")
-
-    # Reranker smoke test
-    print("\n--- Reranker servers ---")
-    dummy_docs = [
-        {"id": "1", "title": "Machine Learning", "text": "Machine learning is a subset of AI that learns from data.", "contents": "Machine Learning\nMachine learning is a subset of AI that learns from data."},
-        {"id": "2", "title": "Deep Learning", "text": "Deep learning uses neural networks with many layers.", "contents": "Deep Learning\nDeep learning uses neural networks with many layers."},
-        {"id": "3", "title": "Statistics", "text": "Statistics is the study of data collection and analysis.", "contents": "Statistics\nStatistics is the study of data collection and analysis."},
-    ]
-    for label, (host, port) in RERANKER_SERVERS.items():
-        print(f"\n>>> {label}  ({host}:{port})")
-        try:
-            t0 = time.perf_counter()
-            result = rerank(host, port, query, dummy_docs, topk=3)
-            elapsed = time.perf_counter() - t0
-            docs = result["result"]
-            print(f"    latency: {elapsed*1000:.0f} ms   returned: {len(docs)} docs")
-            for i, doc in enumerate(docs):
-                print(f"  [{i+1}] id={doc.get('id')}  score={doc.get('reranker_score', '?'):.4f}  title={doc.get('title')}")
-        except Exception as e:
-            print(f"    ERROR: {e}")
 
     # Proxy smoke test
     print("\n--- BM25+Reranker proxy servers ---")
@@ -165,17 +133,6 @@ def _stress_worker(args):
     except Exception as e:
         return ("err", 0.0, str(e))
 
-
-def _stress_reranker_worker(args):
-    host, port, query = args
-    try:
-        t0 = time.perf_counter()
-        result = rerank(host, port, query, DUMMY_DOCS_STRESS, topk=5)
-        elapsed = time.perf_counter() - t0
-        n = len(result["result"])
-        return ("ok", elapsed, n)
-    except Exception as e:
-        return ("err", 0.0, str(e))
 
 
 def _run_stress(label, host, port, worker_fn):
@@ -215,10 +172,6 @@ def test_stress():
     for label, (host, port) in SERVERS.items():
         _run_stress(label, host, port, _stress_worker)
 
-    print("\n--- Reranker servers ---")
-    for label, (host, port) in RERANKER_SERVERS.items():
-        _run_stress(label, host, port, _stress_reranker_worker)
-
     print("\n--- BM25+Reranker proxy servers ---")
     for label, (host, port) in PROXY_SERVERS.items():
         if host == "???":
@@ -230,7 +183,6 @@ def test_stress():
 if __name__ == "__main__":
     print(f"\nRetrieval servers   : {list(SERVERS.keys())}")
     print(f"Pending servers     : {list(PENDING_SERVERS.keys())}")
-    print(f"Reranker servers    : {list(RERANKER_SERVERS.keys())}")
     print(f"Proxy servers       : {list(PROXY_SERVERS.keys())}\n")
     test_smoke()
     test_stress()
