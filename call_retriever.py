@@ -19,6 +19,7 @@ SERVERS = {
     "e5_trqa_ecommerce":  "http://gpu016:8011/retrieve",
     "e5_browsecomp_plus": "http://gpu021:8021/retrieve",
     "e5_wiki18":          "http://gypsum-gpu176:8031/retrieve",
+    "e5_trqa_wiki":        "http://gpu018:8001/retrieve",
 
     # BM25
     "bm25_trqa_wiki":      "http://gypsum-gpu126:8002/retrieve",
@@ -28,11 +29,11 @@ SERVERS = {
     "bm25_trec_rag":       "http://gypsum-gpu144:8042/retrieve",
 
     # BM25 + Reranker
-    "reranker_trqa_wiki":      "http://gypsum-gpu153:8003/retrieve",
-    "reranker_trqa_ecommerce": "http://gypsum-gpu146:8013/retrieve",
-    "reranker_browsecomp":     "http://gypsum-gpu116:8023/retrieve",
-    "reranker_wiki18":         "http://gypsum-gpu127:8033/retrieve",
-    "reranker_trec_rag":       "http://gypsum-gpu131:8043/retrieve",
+    "reranker_trqa_wiki":      "http://gypsum-gpu116:8003/retrieve",
+    "reranker_trqa_ecommerce": "http://gpu001:8013/retrieve",
+    "reranker_browsecomp":     "http://gypsum-gpu124:8023/retrieve",
+    "reranker_wiki18":         "http://gypsum-gpu144:8033/retrieve",
+    "reranker_trec_rag":       "http://gypsum-gpu145:8043/retrieve",
 }
 
 
@@ -63,7 +64,7 @@ def retrieve(server_url: str, queries: list[str], topk: int = 5) -> list[list[di
 # ── Example 1: single query ───────────────────────────────────────────────────
 
 def example_single_query():
-    url = SERVERS["bm25_wiki18"]
+    url = SERVERS["e5_wiki18"]
     query = "What is retrieval-augmented generation?"
 
     print(f"Server : {url}")
@@ -81,7 +82,7 @@ def example_single_query():
 # ── Example 2: batch queries ──────────────────────────────────────────────────
 
 def example_batch_queries():
-    url = SERVERS["e5_wiki18"]
+    url = SERVERS["e5_trqa_wiki"]
     queries = [
         "How does BERT work?",
         "What causes inflation?",
