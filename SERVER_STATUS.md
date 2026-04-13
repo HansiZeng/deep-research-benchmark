@@ -12,14 +12,14 @@ Last updated: 2026-04-11
 | E5 | browsecomp-plus | gpu021 | 8021 | ✅ Running |
 | E5 | wiki-18 | gypsum-gpu176 | 8031 | ✅ Running |
 | E5 | trqa-wiki | gpu018 | 8001 | ✅ Running (IVF65536_HNSW32,PQ96, GPU) |
-| E5 | trec-rag | ??? | 8041 | ⏳ Pending (rebuilding index: IVF65536_HNSW32,PQ128) |
+| E5 | trec-rag | gpu022 | 8041 | ✅ Running |
 | BM25 | trqa-wiki | gypsum-gpu126 | 8002 | ✅ Running |
 | BM25 | trqa-ecommerce | gypsum-gpu126 | 8012 | ✅ Running |
 | BM25 | browsecomp-plus | gypsum-gpu127 | 8022 | ✅ Running |
 | BM25 | trec-rag | gypsum-gpu144 | 8042 | ✅ Running |
 | BM25 | wiki-18 | cpu068 | 8032 | ✅ Running |
 | BM25+Reranker | trqa-wiki | gypsum-gpu153 | 8003 | ✅ Running |
-| BM25+Reranker | trqa-ecommerce | gypsum-gpu153 | 8013 | ✅ Running |
+| BM25+Reranker | trqa-ecommerce | gypsum-gpu094 | 8013 | ✅ Running |
 | BM25+Reranker | browsecomp-plus | gypsum-gpu131 | 8023 | ✅ Running |
 | BM25+Reranker | wiki-18 | gypsum-gpu132 | 8033 | ✅ Running |
 | BM25+Reranker | trec-rag | gypsum-gpu132 | 8043 | ✅ Running |

@@ -12,14 +12,14 @@ Retrieval servers for the deep research course project. For each corpus we host 
 | E5 (dense) | trqa-ecommerce | Total Recall QA — ecommerce | `http://gpu016:8011/retrieve` | ✅ Ready |
 | E5 (dense) | browsecomp-plus | BrowseComp-Plus | `http://gpu021:8021/retrieve` | ✅ Ready |
 | E5 (dense) | wiki-18 | MultiHop QA | `http://gypsum-gpu176:8031/retrieve` | ✅ Ready |
-| E5 (dense) | trec-rag | TREC RAG 2024 | — | ⏳ Pending |
+| E5 (dense) | trec-rag | TREC RAG 2024 | `http://gpu022:8041/retrieve` | ⏳ Pending |
 | BM25 | trqa-wiki | Total Recall QA — wiki | `http://gypsum-gpu126:8002/retrieve` | ✅ Ready |
 | BM25 | trqa-ecommerce | Total Recall QA — ecommerce | `http://gypsum-gpu126:8012/retrieve` | ✅ Ready |
 | BM25 | browsecomp-plus | BrowseComp-Plus | `http://gypsum-gpu127:8022/retrieve` | ✅ Ready |
 | BM25 | wiki-18 | MultiHop QA | `http://cpu068:8032/retrieve` | ✅ Ready |
 | BM25 | trec-rag | TREC RAG 2024 | `http://gypsum-gpu144:8042/retrieve` | ✅ Ready |
 | BM25+Reranker | trqa-wiki | Total Recall QA — wiki | `http://gypsum-gpu153:8003/retrieve` | ✅ Ready |
-| BM25+Reranker | trqa-ecommerce | Total Recall QA — ecommerce | `http://gypsum-gpu153:8013/retrieve` | ✅ Ready |
+| BM25+Reranker | trqa-ecommerce | Total Recall QA — ecommerce | `http://gypsum-gpu094:8013/retrieve` | ✅ Ready |
 | BM25+Reranker | browsecomp-plus | BrowseComp-Plus | `http://gypsum-gpu131:8023/retrieve` | ✅ Ready |
 | BM25+Reranker | wiki-18 | MultiHop QA | `http://gypsum-gpu132:8033/retrieve` | ✅ Ready |
 | BM25+Reranker | trec-rag | TREC RAG 2024 | `http://gypsum-gpu132:8043/retrieve` | ✅ Ready |

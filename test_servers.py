@@ -19,6 +19,7 @@ SERVERS = {
     "E5 browsecomp-plus":  ("gpu021",          8021),
     "E5 trqa-wiki":        ("gpu018",          8001),
     "E5 wiki-18":          ("gypsum-gpu176",   8031),
+    "E5 trec-rag":         ("gpu022",          8041),
     "BM25 trqa-wiki":      ("gypsum-gpu126",   8002),
     "BM25 trqa-ecommerce": ("gypsum-gpu126",   8012),
     "BM25 browsecomp":     ("gypsum-gpu127",   8022),
@@ -27,13 +28,12 @@ SERVERS = {
 }
 
 PENDING_SERVERS = {
-    "E5 trec-rag":         ("???",             8041),  # rebuilding IVF65536_HNSW32,PQ96 index
 }
 
 # BM25+Reranker proxy servers (POST /retrieve, same interface)
 PROXY_SERVERS = {
     "Proxy trqa-wiki":      ("gypsum-gpu153",  8003),
-    "Proxy trqa-ecommerce": ("gypsum-gpu153",  8013),
+    "Proxy trqa-ecommerce": ("gypsum-gpu094",  8013),
     "Proxy browsecomp":     ("gypsum-gpu131",  8023),
     "Proxy wiki-18":        ("gypsum-gpu132",  8033),
     "Proxy trec-rag":       ("gypsum-gpu132",  8043),

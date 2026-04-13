@@ -84,7 +84,7 @@ docs = resp.json()["result"][0]
 |--------|------|------|
 | E5 | gpu016 | **8011** |
 | BM25 | gypsum-gpu126 | **8012** |
-| BM25+Reranker | gypsum-gpu145 | **8013** |
+| BM25+Reranker | gypsum-gpu094 | **8013** |
 
 ```python
 # E5
@@ -96,7 +96,7 @@ resp = requests.post("http://gypsum-gpu126:8012/retrieve",
     json={"queries": ["wireless headphones under $50"], "topk": 5})
 
 # BM25 + Reranker
-resp = requests.post("http://gypsum-gpu145:8013/retrieve",
+resp = requests.post("http://gypsum-gpu094:8013/retrieve",
     json={"queries": ["wireless headphones under $50"], "topk": 5})
 ```
 
@@ -158,16 +158,20 @@ Uses the MS MARCO V2.1 segmented corpus (113.5M segments).
 
 | Method | Host | Port |
 |--------|------|------|
-| E5 | *(pending — index building)* | **8041** |
+| E5 | gpu022 | **8041** |
 | BM25 | gypsum-gpu144 | **8042** |
 | BM25+Reranker | gypsum-gpu147 | **8043** |
 
 ```python
-# BM25 (available now)
+# E5
+resp = requests.post("http://gpu022:8041/retrieve",
+    json={"queries": ["your query"], "topk": 5})
+
+# BM25
 resp = requests.post("http://gypsum-gpu144:8042/retrieve",
     json={"queries": ["your query"], "topk": 5})
 
-# BM25 + Reranker (available now)
+# BM25 + Reranker
 resp = requests.post("http://gypsum-gpu147:8043/retrieve",
     json={"queries": ["your query"], "topk": 5})
 ```

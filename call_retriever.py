@@ -20,6 +20,7 @@ SERVERS = {
     "e5_browsecomp_plus": "http://gpu021:8021/retrieve",
     "e5_wiki18":          "http://gypsum-gpu176:8031/retrieve",
     "e5_trqa_wiki":        "http://gpu018:8001/retrieve",
+    "e5_trec_rag":         "http://gpu022:8041/retrieve",
 
     # BM25
     "bm25_trqa_wiki":      "http://gypsum-gpu126:8002/retrieve",
@@ -30,7 +31,7 @@ SERVERS = {
 
     # BM25 + Reranker
     "reranker_trqa_wiki":      "http://gypsum-gpu153:8003/retrieve",
-    "reranker_trqa_ecommerce": "http://gypsum-gpu153:8013/retrieve",
+    "reranker_trqa_ecommerce": "http://gypsum-gpu094:8013/retrieve",
     "reranker_browsecomp":     "http://gypsum-gpu131:8023/retrieve",
     "reranker_wiki18":         "http://gypsum-gpu132:8033/retrieve",
     "reranker_trec_rag":       "http://gypsum-gpu132:8043/retrieve",
@@ -82,7 +83,10 @@ def example_single_query():
 # ── Example 2: batch queries ──────────────────────────────────────────────────
 
 def example_batch_queries():
-    url = SERVERS["e5_trqa_wiki"]
+    # ds = "reranker_browsecomp"
+    ds = "e5_trec_rag"
+    print(f"Example 2: Batch queries ({ds})")
+    url = SERVERS[ds]
     queries = [
         "How does BERT work?",
         "What causes inflation?",
@@ -127,15 +131,14 @@ def example_compare_retrievers():
 # ── Run examples ──────────────────────────────────────────────────────────────
 
 if __name__ == "__main__":
-    print("=" * 60)
-    print("Example 1: Single query (BM25 wiki-18)")
-    print("=" * 60)
-    example_single_query()
+    # print("=" * 60)
+    # print("Example 1: Single query (BM25 wiki-18)")
+    # print("=" * 60)
+    # example_single_query()
 
     print("=" * 60)
-    print("Example 2: Batch queries (E5 wiki-18)")
-    print("=" * 60)
     example_batch_queries()
+    print("=" * 60)
 
     # print("=" * 60)
     # print("Example 3: BM25 vs E5 comparison (wiki-18)")
