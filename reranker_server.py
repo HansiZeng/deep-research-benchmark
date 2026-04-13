@@ -81,11 +81,15 @@ class Qwen3Reranker:
                                         truncation=True, max_length=self.max_length)
                 inputs = {k: v.cuda() for k, v in inputs.items()}
                 out = self.model(**inputs)
-                logits = (out.logits if hasattr(out, "logits") else out[0])[:, -1, :]
-                yn = torch.stack([logits[:, self.yes_id], logits[:, self.no_id]], dim=-1)
-                batch_scores = torch.softmax(yn, dim=-1)[:, 0].cpu().tolist()
-                del inputs
+                # .clone() breaks the view so out (the full ~20GB logits tensor) can be
+                # freed immediately — without this, logits holds a view reference to
+                # out.logits and 20GB stays allocated for the lifetime of this thread
+                logits = (out.logits if hasattr(out, "logits") else out[0])[:, -1, :].clone()
+                del out, inputs
                 torch.cuda.empty_cache()
+                yn = torch.stack([logits[:, self.yes_id], logits[:, self.no_id]], dim=-1)
+                del logits
+                batch_scores = torch.softmax(yn, dim=-1)[:, 0].cpu().tolist()
             scores.extend(batch_scores)
         return scores
 
