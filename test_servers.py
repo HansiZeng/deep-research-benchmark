@@ -32,11 +32,11 @@ PENDING_SERVERS = {
 
 # BM25+Reranker proxy servers (POST /retrieve, same interface)
 PROXY_SERVERS = {
-    "Proxy trqa-wiki":      ("gypsum-gpu116",  8003),
-    "Proxy trqa-ecommerce": ("gpu001",          8013),
-    "Proxy browsecomp":     ("gypsum-gpu124",  8023),
-    "Proxy wiki-18":        ("gypsum-gpu144",  8033),
-    "Proxy trec-rag":       ("gypsum-gpu145",  8043),
+    "Proxy trqa-wiki":      ("gypsum-gpu153",  8003),
+    "Proxy trqa-ecommerce": ("gypsum-gpu153",  8013),
+    "Proxy browsecomp":     ("gypsum-gpu131",  8023),
+    "Proxy wiki-18":        ("gypsum-gpu132",  8033),
+    "Proxy trec-rag":       ("gypsum-gpu132",  8043),
 }
 
 # ── Config ───────────────────────────────────────────────────────────────────

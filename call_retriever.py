@@ -29,11 +29,11 @@ SERVERS = {
     "bm25_trec_rag":       "http://gypsum-gpu144:8042/retrieve",
 
     # BM25 + Reranker
-    "reranker_trqa_wiki":      "http://gypsum-gpu116:8003/retrieve",
-    "reranker_trqa_ecommerce": "http://gpu001:8013/retrieve",
-    "reranker_browsecomp":     "http://gypsum-gpu124:8023/retrieve",
-    "reranker_wiki18":         "http://gypsum-gpu144:8033/retrieve",
-    "reranker_trec_rag":       "http://gypsum-gpu145:8043/retrieve",
+    "reranker_trqa_wiki":      "http://gypsum-gpu153:8003/retrieve",
+    "reranker_trqa_ecommerce": "http://gypsum-gpu153:8013/retrieve",
+    "reranker_browsecomp":     "http://gypsum-gpu131:8023/retrieve",
+    "reranker_wiki18":         "http://gypsum-gpu132:8033/retrieve",
+    "reranker_trec_rag":       "http://gypsum-gpu132:8043/retrieve",
 }
 
 
