@@ -16,15 +16,14 @@ SERVERS=(
   "BM25_browsecomp       gypsum-gpu127   8022"
   "BM25_wiki-18          cpu068          8032"
   "BM25_trec-rag         gypsum-gpu144   8042"
-  "Proxy_trqa-wiki       gypsum-gpu116   8003"
+  "Proxy_trqa-wiki       gypsum-gpu153   8003"
   "Proxy_trqa-ecommerce  gypsum-gpu094   8013"
-  "Proxy_browsecomp      gypsum-gpu124   8023"
-  "Proxy_wiki-18         gypsum-gpu144   8033"
-  "Proxy_trec-rag        gypsum-gpu145   8043"
+  "Proxy_browsecomp      gypsum-gpu131   8023"
+  "Proxy_wiki-18         gypsum-gpu132   8033"
+  "Proxy_trec-rag        gypsum-gpu132   8043"
 )
 
 PENDING_SERVERS=(
-  "E5_trec-rag  ???  8041"
 )
 
 GREEN='\033[0;32m'
