@@ -1,6 +1,6 @@
 # Retrieval Server Status
 
-Last updated: 2026-04-11
+Last updated: 2026-04-21
 
 ---
 
@@ -8,22 +8,22 @@ Last updated: 2026-04-11
 
 | Type | Corpus | Host | Port | Status |
 |------|--------|------|------|--------|
-| E5 | trqa-ecommerce | gpu016 | 8011 | ✅ Running |
-| E5 | browsecomp-plus | gpu021 | 8021 | ✅ Running |
-| E5 | wiki-18 | gypsum-gpu176 | 8031 | ✅ Running |
-| E5 | trqa-wiki | gpu018 | 8001 | ✅ Running (IVF65536_HNSW32,PQ96, GPU) |
-| E5 | trec-rag | gpu022 | 8041 | ✅ Running |
-| BM25 | trqa-wiki | gypsum-gpu126 | 8002 | ✅ Running |
-| BM25 | trqa-ecommerce | gypsum-gpu126 | 8012 | ✅ Running |
-| BM25 | browsecomp-plus | gypsum-gpu127 | 8022 | ✅ Running |
-| BM25 | trec-rag | gypsum-gpu144 | 8042 | ✅ Running |
-| BM25 | wiki-18 | cpu068 | 8032 | ✅ Running |
-| BM25+Reranker | trqa-wiki | gypsum-gpu153 | 8003 | ✅ Running |
-| BM25+Reranker | trqa-ecommerce | gypsum-gpu094 | 8013 | ✅ Running |
-| BM25+Reranker | browsecomp-plus | gypsum-gpu131 | 8023 | ✅ Running |
-| BM25+Reranker | wiki-18 | gypsum-gpu132 | 8033 | ✅ Running |
-| BM25+Reranker | trec-rag | gypsum-gpu132 | 8043 | ✅ Running |
-| Reranker | (corpus-agnostic) | gpu020 | 9001 | ✅ Running (A100, batch_size=32, max_length=2048) |
+| E5 | trqa-wiki | gpu022 | 8001 | ✅ Running (job 55875182) |
+| E5 | trqa-ecommerce | gpu016 | 8011 | ❌ Offline |
+| E5 | browsecomp-plus | gpu021 | 8021 | ❌ Offline |
+| E5 | wiki-18 | gypsum-gpu176 | 8031 | ❌ Offline |
+| E5 | trec-rag | gpu015 | 8041 | ✅ Running (job 55875169) |
+| BM25 | trqa-wiki | gypsum-gpu126 | 8002 | ❌ Offline |
+| BM25 | trqa-ecommerce | gypsum-gpu126 | 8012 | ❌ Offline |
+| BM25 | browsecomp-plus | gypsum-gpu127 | 8022 | ❌ Offline |
+| BM25 | trec-rag | gypsum-gpu144 | 8042 | ❌ Offline |
+| BM25 | wiki-18 | cpu068 | 8032 | ❌ Offline |
+| BM25+Reranker | trqa-wiki | gypsum-gpu153 | 8003 | ❌ Offline |
+| BM25+Reranker | trqa-ecommerce | gypsum-gpu094 | 8013 | ❌ Offline |
+| BM25+Reranker | browsecomp-plus | gypsum-gpu131 | 8023 | ❌ Offline |
+| BM25+Reranker | wiki-18 | gypsum-gpu132 | 8033 | ❌ Offline |
+| BM25+Reranker | trec-rag | gypsum-gpu132 | 8043 | ❌ Offline |
+| Reranker | (corpus-agnostic) | gpu020 | 9001 | ❌ Offline |
 
 ---
 
