@@ -11,7 +11,7 @@ Retrieval servers for the deep research course project. For each corpus we host 
 | E5 (dense) | trqa-wiki | Total Recall QA — wiki | `http://gpu022:8001/retrieve` | ✅ Ready |
 | E5 (dense) | trqa-ecommerce | Total Recall QA — ecommerce | `http://gpu016:8011/retrieve` | ❌ Offline |
 | E5 (dense) | browsecomp-plus | BrowseComp-Plus | `http://gpu021:8021/retrieve` | ❌ Offline |
-| E5 (dense) | wiki-18 | MultiHop QA | `http://gypsum-gpu176:8031/retrieve` | ❌ Offline |
+| E5 (dense) | wiki-18 | MultiHop QA | `http://gypsum-gpu181:8031/retrieve` | ✅ Ready |
 | E5 (dense) | trec-rag | TREC RAG 2024 | `http://gpu015:8041/retrieve` | ✅ Ready |
 | BM25 | trqa-wiki | Total Recall QA — wiki | `http://gypsum-gpu126:8002/retrieve` | ❌ Offline |
 | BM25 | trqa-ecommerce | Total Recall QA — ecommerce | `http://gypsum-gpu126:8012/retrieve` | ❌ Offline |

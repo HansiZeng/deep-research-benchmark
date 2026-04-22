@@ -1,6 +1,7 @@
 sbatch_jobs/
 scripts/
 CLAUDE.md
+analysis/
 __pycache__/
 *.pyc
 .DS_Store
