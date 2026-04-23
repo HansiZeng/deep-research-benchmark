@@ -1,6 +1,6 @@
 # Retrieval Server Status
 
-Last updated: 2026-04-22
+Last updated: 2026-04-23
 
 ---
 
@@ -9,8 +9,8 @@ Last updated: 2026-04-22
 | Type | Corpus | Host | Port | Status |
 |------|--------|------|------|--------|
 | E5 | trqa-wiki | gpu022 | 8001 | ✅ Running (job 55875182) |
-| E5 | trqa-ecommerce | gpu016 | 8011 | ❌ Offline |
-| E5 | browsecomp-plus | gpu021 | 8021 | ❌ Offline |
+| E5 | trqa-ecommerce | gypsum-gpu162 | 8011 | ✅ Running (job 55875180) |
+| E5 | browsecomp-plus | gypsum-gpu191 | 8021 | ✅ Running (job 55875160) |
 | E5 | wiki-18 | gypsum-gpu181 | 8031 | ✅ Running (job 55874891) |
 | E5 | trec-rag | gpu015 | 8041 | ✅ Running (job 55875169) |
 | BM25 | trqa-wiki | gypsum-gpu126 | 8002 | ❌ Offline |
